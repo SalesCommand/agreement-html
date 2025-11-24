@@ -6,31 +6,34 @@
 <title>SalesCommand Partnership Agreement</title>
 <style>
     /* BASE RESET & FONTS */
+    @page {
+    size: A4;
+    margin: 0;
+}
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
 
-    body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-        width: 2480px; /* Standard A4 @ 300dpi */
-        background: #505050; /* Dark background for preview only */
-        margin: 0;
-        padding: 0;
-    }
-
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    /* width: 2480px; - REMOVED FOR DOCRAPTOR */
+    background: #ffffff; /* Also changed from #505050 */
+    margin: 0;
+    padding: 0;
+}
     /* PAGE CONTAINER SHARED STYLES */
     .cover-page, .page {
-        width: 2480px;
-        height: 3508px;
+        width: 100%; /* Changed from 2480px */
+        height: 100vh; /* Changed from 3508px */
         position: relative;
         overflow: hidden;
-        margin: 0 auto 50px auto; /* Spacing for preview */
+        /* margin: 0 auto 50px auto; - REMOVED */
         page-break-after: always;
         background: #ffffff;
         page-break-inside: avoid;
-    }
+}
 
     /* ============================================
        COVER PAGE
@@ -2183,3 +2186,4 @@
 </body>
 
 </html>
+

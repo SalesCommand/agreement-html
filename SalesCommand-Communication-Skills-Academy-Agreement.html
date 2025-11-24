@@ -1,230 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SalesCommand Partnership Agreement</title>
-    <style>
-        /* BASE RESET & FONTS */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SalesCommand Partnership Agreement</title>
+<style>
+    /* BASE RESET & FONTS */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            width: 2480px; /* Standard A4 @ 300dpi */
-            background: #505050; /* Dark background for preview only */
-            margin: 0;
-            padding: 0;
-        }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        width: 2480px; /* Standard A4 @ 300dpi */
+        background: #505050; /* Dark background for preview only */
+        margin: 0;
+        padding: 0;
+    }
 
-        /* PAGE CONTAINER SHARED STYLES */
-        .cover-page, .page {
-            width: 2480px;
-            height: 3508px;
-            position: relative;
-            overflow: hidden;
-            margin: 0 auto 50px auto; /* Spacing for preview */
-            page-break-after: always;
-            background: #ffffff;
-        }
+    /* PAGE CONTAINER SHARED STYLES */
+    .cover-page, .page {
+        width: 2480px;
+        height: 3508px;
+        position: relative;
+        overflow: hidden;
+        margin: 0 auto 50px auto; /* Spacing for preview */
+        page-break-after: always;
+        background: #ffffff;
+        page-break-inside: avoid;
+    }
 
-        /* ============================================
-           COVER PAGE
-           ============================================ */
-        .cover-page {
-            background: linear-gradient(135deg, #003545 0%, #002535 15%, #000000 35%, #000000 65%, #1a0d08 85%, #2d1410 100%);
-            color: #ffffff;
-        }
+    /* ============================================
+       COVER PAGE
+       ============================================ */
+    .cover-page {
+        background: linear-gradient(135deg, #003545 0%, #002535 15%, #000000 35%, #000000 65%, #1a0d08 85%, #2d1410 100%);
+        color: #ffffff;
+    }
 
-        .cover-container {
-            width: 100%;
-            height: 100%;
-            padding: 280px 200px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+    .cover-container {
+        width: 100%;
+        height: 100%;
+        padding: 280px 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 
-        .cover-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
+    .cover-header {
+        text-align: center;
+        margin-bottom: 80px;
+    }
 
-        .sc-logo {
-            height: 800px;
-            width: auto;
-            display: block;
-            margin: 0 auto -300px;
-        }
+    /* IMAGE SCALING OPTIMIZATION */
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
 
-        .company-tagline {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 50px;
-            font-weight: 700;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
-        }
+    .sc-logo {
+        height: 600px; /* Reduced from 800px */
+        width: auto;
+        display: block;
+        margin: 0 auto -200px; /* Reduced from -300px */
+    }
 
-        .main-content {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            margin-bottom: 100px;
-        }
+    .company-tagline {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 50px;
+        font-weight: 700;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    }
 
-        .doc-type {
-            background: rgba(255, 255, 255, 0.15);
-            color: #ffffff;
-            padding: 24px 60px;
-            border-radius: 50px;
-            display: inline-block;
-            font-size: 32px;
-            font-weight: 700;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            margin-bottom: 60px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            align-self: flex-start;
-        }
+    .main-content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 100px;
+    }
 
-        .main-title {
-            color: #ffffff;
-            font-size: 200px;
-            font-weight: 900;
-            line-height: 0.9;
-            margin-bottom: 50px;
-            text-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
-            letter-spacing: -5px;
-        }
+    .doc-type {
+        background: rgba(255, 255, 255, 0.15);
+        color: #ffffff;
+        padding: 24px 60px;
+        border-radius: 50px;
+        display: inline-block;
+        font-size: 32px;
+        font-weight: 700;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        margin-bottom: 60px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        align-self: flex-start;
+    }
 
-        .subtitle {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 60px;
-            font-weight: 500;
-            margin-bottom: 120px;
-        }
+    .main-title {
+        color: #ffffff;
+        font-size: 200px;
+        font-weight: 900;
+        line-height: 0.9;
+        margin-bottom: 50px;
+        text-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
+        letter-spacing: -5px;
+    }
 
-        .client-card {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 90px 100px;
-            border-radius: 50px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            max-width: 1800px;
-            width: 100%;
-            margin: 0 auto;
-        }
+    .subtitle {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 60px;
+        font-weight: 500;
+        margin-bottom: 120px;
+    }
 
-        .client-logo-section {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 60px;
-            border-radius: 30px;
-            text-align: center;
-            margin-bottom: 55px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
+    .client-card {
+        background: rgba(255, 255, 255, 0.15);
+        padding: 90px 100px;
+        border-radius: 50px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        max-width: 1800px;
+        width: 100%;
+        margin: 0 auto;
+    }
 
-        .client-logo-label {
-            font-size: 26px;
-            color: rgba(255, 255, 255, 0.9);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 35px;
-        }
+    .client-logo-section {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 60px;
+        border-radius: 30px;
+        text-align: center;
+        margin-bottom: 55px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
 
-        .client-logo {
-            max-height: 180px;
-            max-width: 100%;
-            width: auto;
-            display: inline-block;
-        }
+    .client-logo-label {
+        font-size: 26px;
+        color: rgba(255, 255, 255, 0.9);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin-bottom: 35px;
+    }
 
-        .info-grid {
-            display: grid;
-            gap: 80px;
-        }
+    .client-logo {
+        max-height: 120px; /* Reduced from 180px */
+        max-width: 100%;
+        width: auto;
+        display: inline-block;
+    }
 
-        .info-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            padding-bottom: 50px;
-            /* Removed border-bottom to remove lines */
-            gap: 120px;
-        }
+    .footer-logo {
+        height: 60px; /* Reduced from 85px */
+        width: auto;
+        display: inline-block;
+        margin-bottom: 28px;
+    }
 
-        .info-row:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
+    /* PAGE HEADER & FOOTER LOGOS */
+    .page-header-logo {
+        height: 60px;
+        width: auto;
+    }
 
-        .info-label {
-            font-size: 32px;
-            color: #ffffff;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            min-width: 280px;
-        }
-
-        .info-value {
-            font-size: 46px;
-            color: #ffffff;
-            font-weight: 900;
-            text-align: right;
-            max-width: 1200px;
-            line-height: 1.2;
-            flex: 1;
-        }
-
-        .cover-footer {
-            text-align: center;
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 28px;
-            line-height: 1.8;
-        }
-
-        .footer-logo {
-            height: 85px;
-            width: auto;
-            display: inline-block;
-            margin-bottom: 28px;
-        }
-
-        .footer-main {
-            font-weight: 600;
-            margin-bottom: 20px;
-            font-size: 34px;
-        }
-
-        .footer-tagline {
-            font-size: 28px;
-            opacity: 0.9;
-            font-style: italic;
-            margin-bottom: 22px;
-        }
-
-        .footer-contact {
-            opacity: 0.9;
-            margin-bottom: 30px;
-            font-size: 27px;
-        }
-
-        .separator {
-            display: inline-block;
-            margin: 0 24px;
-            opacity: 0.5;
-        }
-
-        .footer-legal {
-            font-size: 24px;
-            opacity: 0.8;
-            margin-top: 24px;
-        }
-
+    /* Prevent content from breaking inside pages */
+    .section-heading,
+    .subsection-heading,
+    .legal-list,
+    .signature-section {
+        page-break-inside: avoid;
+    }
         /* ============================================
            CONTENT PAGES
            ============================================ */
@@ -2236,4 +2181,5 @@
 </div>
 
 </body>
+
 </html>

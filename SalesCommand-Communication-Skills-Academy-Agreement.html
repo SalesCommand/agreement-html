@@ -1,0 +1,2239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SalesCommand Partnership Agreement</title>
+    <style>
+        /* BASE RESET & FONTS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            width: 2480px; /* Standard A4 @ 300dpi */
+            background: #505050; /* Dark background for preview only */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* PAGE CONTAINER SHARED STYLES */
+        .cover-page, .page {
+            width: 2480px;
+            height: 3508px;
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto 50px auto; /* Spacing for preview */
+            page-break-after: always;
+            background: #ffffff;
+        }
+
+        /* ============================================
+           COVER PAGE
+           ============================================ */
+        .cover-page {
+            background: linear-gradient(135deg, #003545 0%, #002535 15%, #000000 35%, #000000 65%, #1a0d08 85%, #2d1410 100%);
+            color: #ffffff;
+        }
+
+        .cover-container {
+            width: 100%;
+            height: 100%;
+            padding: 280px 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .cover-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .sc-logo {
+            height: 800px;
+            width: auto;
+            display: block;
+            margin: 0 auto -300px;
+        }
+
+        .company-tagline {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 50px;
+            font-weight: 700;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+        }
+
+        .main-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-bottom: 100px;
+        }
+
+        .doc-type {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            padding: 24px 60px;
+            border-radius: 50px;
+            display: inline-block;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 60px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            align-self: flex-start;
+        }
+
+        .main-title {
+            color: #ffffff;
+            font-size: 200px;
+            font-weight: 900;
+            line-height: 0.9;
+            margin-bottom: 50px;
+            text-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
+            letter-spacing: -5px;
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 60px;
+            font-weight: 500;
+            margin-bottom: 120px;
+        }
+
+        .client-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 90px 100px;
+            border-radius: 50px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            max-width: 1800px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .client-logo-section {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 60px;
+            border-radius: 30px;
+            text-align: center;
+            margin-bottom: 55px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .client-logo-label {
+            font-size: 26px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 35px;
+        }
+
+        .client-logo {
+            max-height: 180px;
+            max-width: 100%;
+            width: auto;
+            display: inline-block;
+        }
+
+        .info-grid {
+            display: grid;
+            gap: 80px;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding-bottom: 50px;
+            /* Removed border-bottom to remove lines */
+            gap: 120px;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .info-label {
+            font-size: 32px;
+            color: #ffffff;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            min-width: 280px;
+        }
+
+        .info-value {
+            font-size: 46px;
+            color: #ffffff;
+            font-weight: 900;
+            text-align: right;
+            max-width: 1200px;
+            line-height: 1.2;
+            flex: 1;
+        }
+
+        .cover-footer {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 28px;
+            line-height: 1.8;
+        }
+
+        .footer-logo {
+            height: 85px;
+            width: auto;
+            display: inline-block;
+            margin-bottom: 28px;
+        }
+
+        .footer-main {
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 34px;
+        }
+
+        .footer-tagline {
+            font-size: 28px;
+            opacity: 0.9;
+            font-style: italic;
+            margin-bottom: 22px;
+        }
+
+        .footer-contact {
+            opacity: 0.9;
+            margin-bottom: 30px;
+            font-size: 27px;
+        }
+
+        .separator {
+            display: inline-block;
+            margin: 0 24px;
+            opacity: 0.5;
+        }
+
+        .footer-legal {
+            font-size: 24px;
+            opacity: 0.8;
+            margin-top: 24px;
+        }
+
+        /* ============================================
+           CONTENT PAGES
+           ============================================ */
+        .page {
+            padding: 300px 150px 200px;
+        }
+
+        .page-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 160px;
+            background: linear-gradient(135deg, #003545 0%, #002535 100%);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 100px;
+        }
+
+        .page-header-logo {
+            height: 80px;
+            width: auto;
+        }
+
+        .page-header-text {
+            color: white;
+            font-size: 36px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: #f8f9fa;
+            border-top: 4px solid #003545;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 100px;
+            font-size: 24px;
+            color: #4a5568;
+        }
+
+        .legal-content {
+            max-width: 100%;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .section-heading {
+            font-size: 56px;
+            font-weight: 900;
+            color: #003545;
+            margin: 0 0 50px;
+            padding-bottom: 25px;
+            border-bottom: 5px solid #003545;
+        }
+
+        .subsection-heading {
+            font-size: 42px;
+            font-weight: 700;
+            color: #002535;
+            margin: 60px 0 30px;
+        }
+
+        .legal-text {
+            font-size: 34px;
+            color: #2d3748;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+
+        .legal-list {
+            margin: 30px 0 30px 80px;
+            font-size: 34px;
+            color: #2d3748;
+        }
+
+        .legal-list li {
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .legal-sublist {
+            margin: 20px 0 20px 60px;
+            font-size: 32px;
+        }
+
+        .legal-sublist li {
+            margin-bottom: 15px;
+        }
+
+        .definition-term {
+            font-weight: 700;
+            color: #003545;
+        }
+
+        /* TOC Styling */
+        .toc-title {
+            font-size: 70px;
+            font-weight: 900;
+            color: #003545;
+            margin-bottom: 80px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .toc-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 24px 0;
+            border-bottom: 2px solid #e2e8f0;
+            font-size: 34px;
+        }
+
+        .toc-item:last-child {
+            border-bottom: none;
+        }
+
+        .toc-section {
+            color: #2d3748;
+            font-weight: 600;
+        }
+
+        .toc-page {
+            color: #718096;
+            font-weight: 700;
+            font-family: monospace;
+        }
+
+        .toc-dots {
+            flex-grow: 1;
+            border-bottom: 3px dotted #cbd5e0;
+            margin: 0 20px 8px;
+        }
+
+        /* Signature Section */
+        .signature-section {
+            margin: 60px 0;
+            padding: 50px;
+            background: #f8f9fa;
+            border-radius: 20px;
+            border: 3px solid #e2e8f0;
+        }
+
+        .signature-party-title {
+            font-size: 48px;
+            font-weight: 800;
+            color: #003545;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .signature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            margin-top: 50px;
+        }
+
+        .signature-field {
+            margin-bottom: 40px;
+        }
+
+        .signature-label {
+            font-size: 32px;
+            font-weight: 700;
+            color: #4a5568;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .signature-box {
+            border: 4px solid #003545;
+            border-radius: 12px;
+            padding: 20px;
+            height: 300px;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .signature-input-group {
+            margin-bottom: 10px;
+        }
+
+        .signature-line {
+            border-bottom: 3px solid #2d3748;
+            height: 2px;
+            margin: 30px 20px 10px 20px;
+        }
+        
+        .signature-helper {
+            text-align: left; 
+            padding-left: 20px; 
+            color: #cbd5e0; 
+            font-size: 22px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .company-info {
+            font-size: 34px;
+            color: #2d3748;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        /* Schedule Section */
+        .schedule-section {
+            margin: 60px 0;
+        }
+
+        .schedule-field {
+            margin-bottom: 50px;
+        }
+
+        .schedule-label {
+            font-size: 38px;
+            font-weight: 700;
+            color: #003545;
+            margin-bottom: 15px;
+        }
+
+        .schedule-input-line {
+            border-bottom: 3px solid #2d3748;
+            height: 60px;
+            width: 100%;
+            background: rgba(0,0,0,0.02);
+        }
+        
+        .schedule-input-box {
+            border: 3px solid #e2e8f0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            height: 200px;
+            width: 100%;
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .expenses-box {
+            background: #fff7ed;
+            border: 4px solid #fb923c;
+            border-radius: 15px;
+            padding: 60px;
+            margin: 60px 0;
+        }
+
+        .expenses-title {
+            font-size: 40px;
+            font-weight: 800;
+            color: #ea580c;
+            margin-bottom: 30px;
+        }
+
+        .expenses-text {
+            font-size: 34px;
+            color: #2d3748;
+            line-height: 1.6;
+        }
+
+        /* Proposal Table Styles */
+        .proposal-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 40px 0;
+            font-size: 30px;
+        }
+        .proposal-table th {
+            background: #003545;
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-weight: 700;
+        }
+        .proposal-table td {
+            padding: 20px;
+            border-bottom: 2px solid #e2e8f0;
+            vertical-align: top;
+        }
+        .proposal-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        /* PRINT MEDIA QUERY */
+        @media print {
+            body {
+                background: none;
+                margin: 0;
+            }
+            .cover-page, .page {
+                margin: 0;
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- PAGE 1: COVER PAGE -->
+<div class="cover-page">
+    <div class="cover-container">
+        <div class="cover-header">
+            <img src="https://i.imgur.com/ThVATFg.png" alt="SalesCommand" class="sc-logo">
+            <div class="company-tagline">
+                AI-Powered Sales Intelligence Services
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="doc-type">Service Agreement</div>
+
+            <h1 class="main-title">Partnership<br>Agreement</h1>
+
+            <p class="subtitle">Signal-Based Lead Generation & RevOps System</p>
+
+            <div class="client-card">
+                <div class="client-logo-section">
+                    <div class="client-logo-label">Prepared For</div>
+                    <div style="height: 200px; display: flex; align-items: center; justify-content: center;">
+                        <img src="Logo.png" alt="Communication Skills Academy" class="client-logo">
+                    </div>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-row">
+                        <span class="info-label">Company</span>
+                        <span class="info-value">Communication Skills Academy</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Contact</span>
+                        <span class="info-value">Vikki Maver</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Agreement ID</span>
+                        <span class="info-value monospace">SC-2025-11-SC-12-3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cover-footer">
+            <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="footer-logo">
+            <div class="footer-main">
+                SalesCommand
+            </div>
+            <div class="footer-tagline">
+                "Scale Without Sacrifice"
+            </div>
+            <div class="footer-contact">
+                hello@salescommand.ai
+                <span class="separator">•</span>
+                salescommand.ai
+            </div>
+            <div class="footer-legal">
+                Confidential & Proprietary
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PAGE 2: TABLE OF CONTENTS -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Services Agreement</div>
+    </div>
+
+    <div class="legal-content">
+        <h1 class="toc-title">Table of Contents</h1>
+        
+        <div class="toc-item">
+            <span class="toc-section">OUTSOURCED SERVICES AGREEMENT</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page">3</span>
+        </div>
+        
+        <div class="toc-item">
+            <span class="toc-section">1. Definitions</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page">4</span>
+        </div>
+        
+        <div class="toc-item">
+            <span class="toc-section">2. Services</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page">5</span>
+        </div>
+        
+        <div class="toc-item">
+            <span class="toc-section">3. Duration</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page">6</span>
+        </div>
+        
+        <div class="toc-item">
+            <span class="toc-section">4. Location</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page">6</span>
+        </div>
+        
+        <div class="toc-item">
+            <span class="toc-section">5. Fee(s)</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page">6</span>
+        </div>
+        
+        <div class="toc-item">
+            <span class="toc-section">6. Client's Obligations</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page">7</span>
+        </div>
+        
+        <div class="toc-item">
+            <span class="toc-section">7. Use of Subcontractors</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page">8</span>
+        </div>
+        
+        <div class="toc-item">
+            <span class="toc-section">8. Limitations in the Services</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page">8</span>
+        </div>
+        
+        <div class="toc-item">
+            <span class="toc-section">9. Disclosure and Ownership of Intellectual Property Rights</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page">9</span>
+        </div>
+        
+        <div class="toc-item">
+            <span class="toc-section">10. Confidentiality</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page">9</span>
+        </div>
+        
+        <div class="toc-item">
+            <span class="toc-section">11. Warranties, liability and indemnities</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page">10</span>
+        </div>
+        
+        <div class="toc-item">
+            <span class="toc-section">12. Termination</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page">12</span>
+        </div>
+        
+        <div class="toc-item">
+            <span class="toc-section">13. Dispute Resolution</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page">13</span>
+        </div>
+        
+        <div class="toc-item">
+            <span class="toc-section">14. General</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page">14</span>
+        </div>
+        
+        <div class="toc-item">
+            <span class="toc-section">EXECUTED AS AN AGREEMENT</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page">17</span>
+        </div>
+        
+        <div class="toc-item">
+            <span class="toc-section">SCHEDULE – SPECIFICATIONS</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page">18</span>
+        </div>
+
+        <div class="toc-item">
+            <span class="toc-section">APPENDIX A - PROPOSAL REFERENCE</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page">19</span>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 2</span>
+    </div>
+</div>
+
+<!-- PAGE 3: AGREEMENT INTRO -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Services Agreement</div>
+    </div>
+
+    <div class="legal-content">
+        <h1 class="section-heading">OUTSOURCED SERVICES AGREEMENT</h1>
+        
+        <p class="legal-text">This agreement is dated <span style="border-bottom: 2px solid #000; padding: 0 100px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> between:</p>
+        
+        <p class="legal-text"><strong>DC DIGITAL GROUP Pty Ltd</strong> (Trading as "SalesCommand")<br>
+        ABN 27 637 530 664<br>
+        of 102/147 Beach Street, Port Melbourne Victoria, 3207, Australia</p>
+        
+        <p class="legal-text">and</p>
+        
+        <p class="legal-text">The party described as the Client in the Schedule<br>
+        (<strong>Client</strong>)</p>
+        
+        <h2 class="subsection-heading">BACKGROUND</h2>
+        
+        <ul class="legal-list">
+            <li>SalesCommand has skills, background and experience in relation to managed sales services and AI-powered revenue operations (RevOps) support (Services).</li>
+            <li>The Client wishes to engage SalesCommand to provide the Services to the Client and SalesCommand is willing to provide the Services in accordance with the provisions of this Agreement.</li>
+        </ul>
+        
+        <p class="legal-text" style="margin-top: 100px; font-weight: 700; font-size: 44px; text-align: center;">IT IS AGREED AS FOLLOWS:</p>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 3</span>
+    </div>
+</div>
+
+<!-- PAGE 4: DEFINITIONS -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Services Agreement</div>
+    </div>
+
+    <div class="legal-content">
+        <h1 class="section-heading">1. Definitions</h1>
+        
+        <p class="legal-text">In this Agreement unless the context indicates otherwise, the following words shall have the following meanings:</p>
+        
+        <p class="legal-text"><span class="definition-term">Claims</span> means all demands, claims, proceedings, penalties, fines and liability (whether criminal or civil, in contract, tort or otherwise);</p>
+        
+        <p class="legal-text"><span class="definition-term">Commencement Date</span> means the commencement date specified in the Schedule, or if it is not specified then the date of this agreement.</p>
+        
+        <p class="legal-text"><span class="definition-term">Confidential Information</span> includes any information marked as confidential and any information received or developed by SalesCommand during the term of this Agreement, which is not publicly available and relates to processes, equipment and techniques used by the Client in the course of the Client's business including all information, data, drawings, specifications, documentation, source or object code, designs, construction, workings, functions, features and performance notes, techniques, concepts not reduced to material form, agreements with third parties, schematics and proposals and intentions, technical data and marketing information such as customer lists, financial information and business plans;</p>
+        
+        <p class="legal-text"><span class="definition-term">Day or days</span> means calendar day/s, unless stated to the contrary;</p>
+        
+        <p class="legal-text"><span class="definition-term">Facilities</span> means working space, computer equipment, access to the internet and the Client's computer network, telecommunications system, software, cybersecurity facilities or other facility, and shall include not only access to such resources, but also use of them to the extent required by SalesCommand in order to perform the Services which may;</p>
+        
+        <p class="legal-text"><span class="definition-term">Fee(s)</span> means the amount or rates set out in the schedule to this agreement;</p>
+        
+        <p class="legal-text"><span class="definition-term">Goods</span> means any goods sourced by SalesCommand or provided by SalesCommand in connection with any such goods and/or services, including computer hardware and software and any goods provided in connection with any of those things.</p>
+        
+        <p class="legal-text"><span class="definition-term">GST Law</span> means the same as in the A New Tax System (Goods and Services Tax) Act 1999 (Cth);</p>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 4</span>
+    </div>
+</div>
+
+<!-- PAGE 5: DEFINITIONS CONT -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Services Agreement</div>
+    </div>
+
+    <div class="legal-content">
+        <p class="legal-text"><span class="definition-term">Intellectual Property Rights</span> means in relation to a person, the rights of the person in and to:</p>
+        
+        <ul class="legal-list">
+            <li><strong>rights</strong> - all and any intellectual property rights, proprietary rights, industrial property rights, copyrights (including future copyright and rights in the nature of or analogous to copyright), moral rights, performers' protection, patents, designs, inventions, Image Rights, trade marks, service marks, logos, trade names, business names, brand names, plant variety rights, circuit layout rights, software, domain names, trade secrets, business methods, know-how and methods of practice, throughout the world, whether or not now existing, whether or not registrable, in registered or unregistered form, and whether or not protected by a law in force in Australia or elsewhere;</li>
+            <li><strong>applications</strong> - any applications for, or rights to obtain, acquire, renew or extend, any intellectual property rights as defined in paragraph (a) of this definition;</li>
+            <li><strong>franchises</strong> - any schemes or systems which may be franchised;</li>
+            <li><strong>information</strong> - any information, secret processes, know how, discoveries or creations which may be protected by law or by an order of any Governmental Agency;</li>
+            <li><strong>identity</strong> - any rights to use or exploit the name, appearance, voice, sound or other features or characteristics of any person or thing (whether dead or alive), or ascribed to or associated with any fictional character;</li>
+            <li><strong>invention</strong> - any rights to use or exploit any idea or thing which is the direct or indirect result of human discovery, creation, invention or effort; and/or</li>
+            <li><strong>other</strong> - any other intellectual property;</li>
+        </ul>
+        
+        <p class="legal-text"><span class="definition-term">Losses</span> means all losses including financial losses, damages, legal costs and other expenses of any nature whatsoever;</p>
+        
+        <p class="legal-text"><span class="definition-term">Parties</span> means SalesCommand and the Client, and Party shall mean either one of them;</p>
+        
+        <p class="legal-text"><span class="definition-term">Quote</span> means a quote provided to the Client by SalesCommand.</p>
+        
+        <p class="legal-text"><span class="definition-term">Related Body Corporate</span> has the meaning given in section 50 of the Corporations Act 2001 (Cth);</p>
+        
+        <p class="legal-text"><span class="definition-term">Schedule</span> means the schedule to this agreement.</p>
+        
+        <p class="legal-text"><span class="definition-term">Services</span> means the Services and other aspects of those services as specified in the Schedule.</p>
+        
+        <p class="legal-text"><span class="definition-term">Specifications</span> means the specifications set out in the Schedule</p>
+        
+        <p class="legal-text"><span class="definition-term">Successive Term</span> means the successive term set out in the Schedule</p>
+        
+        <p class="legal-text"><span class="definition-term">Term</span> means the term set out in the Schedule</p>
+        
+        <p class="legal-text"><span class="definition-term">Termination Date</span> means the earlier of:</p>
+        <ul class="legal-list">
+            <li>the date of termination of this Agreement by the Client or SalesCommand; and</li>
+            <li>the date of expiry of this Agreement.</li>
+        </ul>
+        
+        <h1 class="section-heading">2. Services</h1>
+        
+        <ul class="legal-list">
+            <li>SalesCommand shall provide the Services to the Client as set out in the Specifications, in consideration for the Client paying the Fee to SalesCommand, subject to the provisions of this Agreement.</li>
+        </ul>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 5</span>
+    </div>
+</div>
+
+<!-- PAGE 6: DURATION & FEES -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Services Agreement</div>
+    </div>
+
+    <div class="legal-content">
+        <ul class="legal-list">
+            <li>SalesCommand and the Client shall agree the time and place for the performance of the Services, subject to the availability of SalesCommand and SalesCommand's subcontractors, agents or representatives.</li>
+            <li>Additional services may be provided by SalesCommand for the Client, on the same terms and conditions as this Agreement, subject to necessary changes and based on an amended or additional schedule specifying additional services.</li>
+            <li>The Client acknowledges and agrees that the Services will be subject to any standard inclusions and exclusions and guidelines as to support and response times as set out in the specifications.</li>
+        </ul>
+        
+        <h1 class="section-heading">3. Duration</h1>
+        
+        <ul class="legal-list">
+            <li>This agreement will commence on the Commencement Date for the Term.</li>
+            <li>At the expiration of the Term, unless terminated under clause 12, this agreement will continue for the Successive Term, on the same terms and conditions subject to necessary changes, unless either Party gives at least 30 days written notice of termination to the other Party prior to expiration of the Term. The parties acknowledge and agree that this agreement will be subject to a minimum initial 12 month term, during which neither party may terminate the agreement, unless clauses 12 (a) or (c) apply. The agreement will then continue for the Term set out in the Schedule to this agreement.</li>
+        </ul>
+        
+        <h1 class="section-heading">4. Location</h1>
+        
+        <p class="legal-text">SalesCommand shall provide the Services in such places, locations or via such electronic media as SalesCommand considers appropriate to the requirements of the Client.</p>
+        
+        <h1 class="section-heading">5. Fee(s)</h1>
+        
+        <ul class="legal-list">
+            <li>In consideration of the provision of the Services, the Client will pay SalesCommand the Fee(s) on the basis of the Fee(s) set out in the Schedule or a Proposal provided by SalesCommand. The Fees will be payable by way of a Retainer and Commission, which will be paid on a weekly, fortnightly or monthly basis as confirmed in the Schedule to this agreement. SalesCommand may require a deposit to be paid in respect of any Fees, as specified in the Schedule. The parties furthermore agree that SalesCommand may charge additional fees for services which fall outside the scope of the Services described in the Schedule to this agreement.</li>
+            <li>The Client acknowledges that the Fee shall be exclusive of any GST that may be charged by SalesCommand to the Client, and therefore SalesCommand will be entitled to add on GST.</li>
+            <li>SalesCommand shall be entitled to increase its fees on no less than 30 days written notice to the Client.</li>
+        </ul>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 6</span>
+    </div>
+</div>
+
+<!-- PAGE 7: FEES CONT -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Services Agreement</div>
+    </div>
+
+    <div class="legal-content">
+        <ul class="legal-list">
+            <li>SalesCommand shall provide the Client with a tax invoice in accordance with the GST Law in relation to Fees payable under this clause 5, and payment shall be made by the Client to SalesCommand within 7 days following receipt of SalesCommand's invoice. SalesCommand may provide separate invoices for Services provided at different times.</li>
+            <li>SalesCommand is permitted to charge for all costs and expenses incurred in performing the Services as are set out in the Schedule.</li>
+            <li>If the Client does not make a payment by the date stated in an invoice or as otherwise provided for in the Agreement, SalesCommand shall be entitled to do all or any of the following:
+                <ul class="legal-sublist">
+                    <li>charge interest on the outstanding amount at the rate specified in the Penalty Interest Rates Act (Vic), as varied from time to time, with effect from the due date, which is seven days from date of invoice.</li>
+                    <li>not perform any further Services (or any part of the Services)</li>
+                    <li>claim any costs from the Client (including any collection agency and/or legal fees on a solicitor and own client basis) that SalesCommand may incur in order to recover its Fee(s).</li>
+                </ul>
+            </li>
+            <li>When making a payment the Client shall quote relevant invoice numbers.</li>
+            <li>If the Client fails to pay any Fees on or by due date, SalesCommand may by notice in writing require the Client to make any future payments via direct debit.</li>
+        </ul>
+        
+        <h1 class="section-heading">6. Client's Obligations</h1>
+        
+        <ul class="legal-list">
+            <li>During the performance of the Services the Client will:
+                <ul class="legal-sublist">
+                    <li>co-operate with SalesCommand as SalesCommand reasonably requires, including but not limited to, allowing SalesCommand to use all necessary and appropriate resources of the Client and its employees, subcontractors and/or agents to enable the Contractor to give effect to this Agreement;</li>
+                    <li>provide the information and documentation that SalesCommand reasonably requires;</li>
+                    <li>make available to SalesCommand such Facilities as SalesCommand reasonably requires, including if necessary installing any such Facilities on SalesCommand's hardware;</li>
+                    <li>ensure that the Client's staff and agents co-operate with and assist SalesCommand.</li>
+                </ul>
+            </li>
+            <li>The Client will not charge for SalesCommand's use of the Facilities made available by the Client, which will be at the Client's own cost.</li>
+            <li>If the Client does not provide the Facilities that SalesCommand reasonably requires (and within the time period) to perform the Services, then any additional costs and expenses which are reasonably incurred by SalesCommand will be paid by the Client.</li>
+        </ul>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 7</span>
+    </div>
+</div>
+
+<!-- PAGE 8: SUBCONTRACTORS -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Services Agreement</div>
+    </div>
+
+    <div class="legal-content">
+        <ul class="legal-list">
+            <li>The Client expressly acknowledges and agrees that it may not at any stage during the course of this agreement and for a period of one year after termination of the agreement employ, hire or otherwise engage any employee, agent or subcontractor of SalesCommand, or any Related Body Corporate, without SalesCommand's consent in writing, which may be withheld in its entire discretion.</li>
+        </ul>
+        
+        <h1 class="section-heading">7. Use of Subcontractors</h1>
+        
+        <ul class="legal-list">
+            <li>SalesCommand is permitted to use other persons to provide some or all of the Services.</li>
+            <li>SalesCommand shall be responsible for the work of any of SalesCommand's subcontractors.</li>
+            <li>Any work undertaken by any of SalesCommand's subcontractors shall be undertaken to the same standard required of SalesCommand in terms of this agreement.</li>
+        </ul>
+        
+        <h1 class="section-heading">8. Limitations in the Services</h1>
+        
+        <p class="legal-text">The Client acknowledges that there may be service limitations in relation to the Services and that the provision of Services may involve trial and error in relation to novel or unknown circumstances and be affected by third party suppliers of SalesCommand or the Client. To the extent that SalesCommand is making reasonable endeavours to assist the Client in such circumstances, then the Client indemnifies and holds SalesCommand harmless in respect of the provision of such Services.</p>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 8</span>
+    </div>
+</div>
+
+<!-- PAGE 9: IP -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Services Agreement</div>
+    </div>
+
+    <div class="legal-content">
+        <h1 class="section-heading">9. Disclosure and Ownership of Intellectual Property Rights</h1>
+        
+        <ul class="legal-list">
+            <li>If the scope of this agreement involves the development of Intellectual Property Rights by SalesCommand for the Client, then SalesCommand must communicate to the Client promptly and fully all Intellectual Property Rights created or developed by SalesCommand or SalesCommand's Personnel (either solely or jointly with others) in the course of performing the Services by SalesCommand for the Client.</li>
+            <li>Subject to clause 9 (c) below, any Intellectual Property Rights developed by SalesCommand for the Client in the course of performing the Services shall be the sole and exclusive property of the Client or its nominees.</li>
+            <li>Notwithstanding any other provision of this clause 9, and for the avoidance of doubt, all Intellectual Property Rights and related material of SalesCommand that is in existence prior to the date of this Agreement, or is developed by SalesCommand independently of this Agreement remains the property of SalesCommand. SalesCommand will furthermore be entitled to use any generic Intellectual Property Rights or material created in terms of this Agreement when dealing with other companies or persons, for example to develop other artistic works of a similar kind, provided there is no reference to the Client or any of its Confidential Information and the development of similar artistic works does not infringe the Intellectual Property Rights of the Client.</li>
+            <li>Notwithstanding any other provision of this clause 9, the Client acknowledges and agrees that while it will own the Intellectual Property Rights created by SalesCommand for the Client in connection with the Services, the Intellectual Property Rights may only be used by the Client and any Related Body Corporate and the Client may not sell, license or in any way transfer the Intellectual Property Rights to any third party, or allow any other party to use the Intellectual Property Rights in any manner whatsoever, without SalesCommand's written consent, which shall not be unreasonably withheld.</li>
+            <li>The obligations accepted by the Parties under this clause 9 survive termination or expiry of this Agreement.</li>
+        </ul>
+        
+        <h1 class="section-heading">10. Confidentiality</h1>
+        
+        <ul class="legal-list">
+            <li>SalesCommand must keep the Client's, and any Related Body Corporate of the Client's, Confidential Information confidential and not deal with it in any way that might prejudice its confidentiality.</li>
+            <li>SalesCommand's obligations with regard to the Confidential Information will continue for so long as the Confidential Information is maintained on a confidential basis by:
+                <ul class="legal-sublist">
+                    <li>the Client, in the case of Confidential Information pertaining to the Client's business; and</li>
+                    <li>the Client's client, in the case of Confidential Information pertaining to the business of any of the Client's clients.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 9</span>
+    </div>
+</div>
+
+<!-- PAGE 10: WARRANTIES -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Services Agreement</div>
+    </div>
+
+    <div class="legal-content">
+        <ul class="legal-list">
+            <li>At the Termination Date:
+                <ul class="legal-sublist">
+                    <li>all Confidential Information must be returned to the Client, including all copies of the Confidential Information or any extracts or summaries of the Confidential Information that SalesCommand makes and any software that SalesCommand creates based on the Confidential Information; and</li>
+                    <li>SalesCommand must erase and destroy any copies of any software containing or comprising the Confidential Information in SalesCommand's possession or under SalesCommand's control or that may have been loaded onto a computer possessed or controlled by SalesCommand.</li>
+                </ul>
+            </li>
+            <li>The Confidential Information does not include information which:
+                <ul class="legal-sublist">
+                    <li>is generally available in the public domain otherwise than as a result of a breach of paragraph (a) by SalesCommand; or</li>
+                    <li>was known by SalesCommand prior to the Client disclosing the information to SalesCommand.</li>
+                </ul>
+            </li>
+            <li>The Client acknowledges and agrees that due to the nature of the Services provided in terms of this agreement, SalesCommand may provide similar services to businesses in the same or similar industry and which are competitors of the Client. The Client furthermore agrees that SalesCommand shall not be required to disclose any details of its other clients to the Client.</li>
+            <li>The obligations accepted by SalesCommand under this clause 10 survive termination or expiry of this Agreement.</li>
+        </ul>
+        
+        <h1 class="section-heading">11. Warranties, liability and indemnities</h1>
+        
+        <ul class="legal-list">
+            <li>SalesCommand warrants that it will use reasonable care and skill in performing the Services.</li>
+            <li>If SalesCommand performs the Services (or any part of the Services) negligently or materially in breach of this Agreement then, if requested by the Client, SalesCommand will:
+                <ul class="legal-sublist">
+                    <li>resupply the Services or equivalent services, or</li>
+                    <li>pay the cost of the resupply of the Services, where payment in full has been made by the Customer.</li>
+                </ul>
+            </li>
+            <li>The Client's request referred to in paragraph 11 (b) above must be made within 6 months of the date that the Services have been provided negligently or materially in breach of this Agreement.</li>
+            <li>SalesCommand acknowledges that:
+                <ul class="legal-sublist">
+                    <li>under applicable Commonwealth, State and Territory laws (including the Competition and Consumer Act), certain statutory express and implied guarantees and warranties will be implied into this agreement (Statutory Guarantees), and</li>
+                    <li>nothing in this agreement excludes, restricts or modifies the Statutory Guarantees, or any condition, warranty, right or remedy conferred on either party by the Competition and Consumer Act or any other applicable law that cannot be excluded, restricted or modified by agreement.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 10</span>
+    </div>
+</div>
+
+<!-- PAGE 11: INDEMNITIES -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Services Agreement</div>
+    </div>
+
+    <div class="legal-content">
+        <ul class="legal-list">
+            <li>SalesCommand shall effect all insurance required to be effected by law including worker's compensation insurance as prescribed by law for SalesCommand's Personnel and public liability insurance for a minimum of $20,000,000 (twenty million dollars).</li>
+            <li>SalesCommand covenants that SalesCommand shall be solely responsible for its own costs, including the payment to SalesCommand's subcontractors, employees and agents of all amounts due by way of salary, superannuation, annual leave, long service leave and any other benefits to which they are entitled as SalesCommand's employees or agents and to otherwise comply with legislation applicable to SalesCommand's employees and agents.</li>
+            <li>SalesCommand provides no warranty that any result or objective can or will be achieved or attained in terms of this agreement</li>
+            <li>Except in the case of death or personal injury caused by SalesCommand's negligence, the liability of SalesCommand under or in connection with this Agreement whether arising in contract, tort, negligence, breach of statutory duty or otherwise shall not exceed the Fee(s) paid by the Client to SalesCommand under this Agreement.</li>
+            <li>Neither Party shall be liable to the other Party in contract, tort, negligence, breach of statutory duty or otherwise for any loss, damage, costs or expenses of any nature whatsoever incurred or suffered by that other Party of an indirect or consequential nature including any economic loss or other loss of turnover, profits, business or goodwill.</li>
+            <li>The Client shall indemnify and hold harmless SalesCommand from and against all Claims and Losses arising from:
+                <ul class="legal-sublist">
+                    <li>loss, damage, liability, injury to SalesCommand, its employees and third parties, infringement of third party Intellectual Property Rights, or third party losses by reason of or arising out of any information supplied to the Client by SalesCommand, its employees or Consultants, or supplied to SalesCommand by the Client within or without the scope of this Agreement, or</li>
+                    <li>a failure by the Client to act upon any reasonable advice provided by SalesCommand.</li>
+                </ul>
+            </li>
+            <li>Each of the Parties acknowledges that, in entering into this Agreement, it does not do so in reliance on any representation, warranty or other provision except as expressly provided in this Agreement, and any conditions, warranties or other terms implied by statute or common law are excluded from this Agreement to the fullest extent permitted by law.</li>
+            <li>SalesCommand warrants that SalesCommand has no authority to engage the services of any person as an employee or agent of the Client.</li>
+            <li>SalesCommand warrants that SalesCommand shall not incur any liability on behalf of the Client or in any way pledge or purport to pledge the Client's credit or accept any other or make any contract binding upon the Client without prior approval being given by the Client.</li>
+            <li>The obligations accepted by SalesCommand and the Client under this clause 11 survive termination or expiry of this Agreement.</li>
+        </ul>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 11</span>
+    </div>
+</div>
+
+<!-- PAGE 12: TERMINATION -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Services Agreement</div>
+    </div>
+
+    <div class="legal-content">
+        <h1 class="section-heading">12. Termination</h1>
+        
+        <ul class="legal-list">
+            <li>Either Party may terminate this Agreement by notice in writing to the other if the Party notified fails to observe any term of this Agreement and fails to rectify this breach, to the satisfaction of the notifying Party, within 30 days of notice of the breach being given in writing by the notifying Party to the other Party.</li>
+            <li>Either Party may terminate this agreement without cause on 30 days written notice to the other Party, but only after the initial 12 month period referred to in clause 3 (b) above.</li>
+            <li>Either Party may terminate this Agreement upon the happening of any of the following events:
+                <ul class="legal-sublist">
+                    <li>if either Party enters into a deed of arrangement or an order is made for it to be wound up;</li>
+                    <li>if an administrator, receiver or receiver/manager or a liquidator is appointed to either Party pursuant to the Corporations Act 2001 (Cth); or</li>
+                    <li>if either Party would be presumed to be insolvent by a court in any of the circumstances referred to in the Corporations Act 2001 (Cth)</li>
+                    <li>a force majeure event, as envisaged in clause 15 (a) below.</li>
+                </ul>
+            </li>
+            <li>The Client may, at its discretion, pay to SalesCommand the equivalent amount of the Fees payable by the Client to SalesCommand during the notice period in lieu of any notice period relating to termination of this Agreement under paragraph (b)(i).</li>
+            <li>Upon termination of this Agreement any Fees, expenses or reimbursements payable by the Client to SalesCommand in respect of any period prior to the Termination Date must be paid by the Client within 7 days after the Termination Date.</li>
+        </ul>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 12</span>
+    </div>
+</div>
+
+<!-- PAGE 13: DISPUTE -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Services Agreement</div>
+    </div>
+
+    <div class="legal-content">
+        <h1 class="section-heading">13. Dispute Resolution</h1>
+        
+        <h2 class="subsection-heading">(a) Dispute Resolution</h2>
+        <p class="legal-text">If a dispute arises out of or relates to this agreement, or the breach, termination, validity or subject matter of the agreement, or to any related claim at law, in equity or pursuant to any statute (Dispute), a Party will not start arbitration or court proceedings (except proceedings seeking injunctive, declaratory or interlocutory relief) in respect of the Dispute unless it has complied with this clause.</p>
+        
+        <h2 class="subsection-heading">(b) Notification of Dispute</h2>
+        <p class="legal-text">A Party claiming that a Dispute has arisen must notify the other Party, giving details of the Dispute.</p>
+        
+        <h2 class="subsection-heading">(c) Resolution of Dispute</h2>
+        <p class="legal-text">During the 21 day period after a notice is given under clause 13 (b) (or longer period agreed in writing by the Parties to the Dispute) (Initial Period) each Party to the Dispute (Disputant) must use its best efforts to resolve the Dispute.</p>
+        
+        <h2 class="subsection-heading">(d) Mediation</h2>
+        <p class="legal-text">If the Disputants are unable to resolve the Dispute within the initial period, each Disputant agrees that the dispute must be referred for mediation, at the request of any Disputant, to:</p>
+        <ul class="legal-list">
+            <li>a mediator agreed on by the Disputants; or</li>
+            <li>if the Disputants are unable to agree on a mediator within seven days (7) after the end of the initial period, a mediator nominated by the President or Acting President of the Law Institute of Victoria or the President's nominee.</li>
+        </ul>
+        
+        <h2 class="subsection-heading">(e) Role of Mediator</h2>
+        <p class="legal-text">The role of any mediator is to assist in negotiating a resolution of the Dispute. A mediator may not make a decision that is binding on a Disputant unless that Disputant has so agreed in writing.</p>
+        
+        <h2 class="subsection-heading">(f) Rules and Venue for Mediation</h2>
+        <p class="legal-text">Mediation will be in accordance with the rules of the Mediation Institute and any formal mediation will be held in Melbourne, Australia and may be held electronically.</p>
+        
+        <h2 class="subsection-heading">(g) Confidentiality</h2>
+        <p class="legal-text">Any information or documents disclosed by a Disputant under this clause:</p>
+        <ul class="legal-list">
+            <li>must be kept confidential; and</li>
+            <li>may not be used except to attempt to resolve the Dispute.</li>
+        </ul>
+        
+        <h2 class="subsection-heading">(h) Costs</h2>
+        <p class="legal-text">Each Disputant must bear its own costs of complying with this clause and the Disputants must bear equally the costs of any mediator engaged.</p>
+        
+        <h2 class="subsection-heading">(i) Termination of agreement</h2>
+        <p class="legal-text">This clause will not merge on termination of the agreement.</p>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 13</span>
+    </div>
+</div>
+
+<!-- PAGE 14: GENERAL 1 -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Services Agreement</div>
+    </div>
+
+    <div class="legal-content">
+        <h1 class="section-heading">14. General</h1>
+        
+        <h2 class="subsection-heading">(a) Force Majeure</h2>
+        <p class="legal-text">Neither Party shall have any liability under or be deemed to be in breach of this Agreement for any delays or failures in performance of this Agreement which result from circumstances beyond the reasonable control of that Party, including, but not limited to an act of war, nature, or god or pandemic or epidemic ("a force majeure event"). The Party affected by such circumstances shall promptly notify the other Party in writing when such circumstances cause a delay or failure in performance and when they cease to do so. If such circumstances continue for a continuous period of more than 3 months, either Party may terminate this Agreement by written notice to the other Party.</p>
+        
+        <h2 class="subsection-heading">(b) Amendments</h2>
+        <p class="legal-text">This Agreement may only be amended in writing signed by duly authorised representatives of the Parties.</p>
+        
+        <h2 class="subsection-heading">(c) Assignment</h2>
+        <ul class="legal-list">
+            <li>Subject to paragraph c(ii), neither Party may assign, delegate, subcontract, mortgage, charge or otherwise transfer any or all of its rights and obligations under this Agreement without the prior written agreement of the other Party.</li>
+            <li>A Party may assign and transfer all its rights and obligations under this Agreement to any person to which it transfers all of its business, provided that the assignee undertakes in writing to the other Party to be bound by the obligations of the assignor under this Agreement.</li>
+        </ul>
+        
+        <h2 class="subsection-heading">(d) Entire agreement</h2>
+        <ul class="legal-list">
+            <li>This Agreement contains the whole agreement between the Parties in respect of the subject matter of the Agreement, and supersedes and replaces any prior written or oral agreements, representations or understandings between them relating to such subject matter.</li>
+            <li>The Parties confirm that they have not entered into this Agreement on the basis of any representation that is not expressly incorporated into this Agreement.</li>
+        </ul>
+        
+        <h2 class="subsection-heading">(e) Waiver</h2>
+        <ul class="legal-list">
+            <li>No failure or delay by SalesCommand in exercising any right, power or privilege under this Agreement shall impair the same or operate as a waiver of the same nor shall any single or partial exercise of any right, power or privilege preclude any further exercise of the same or the exercise of any other right, power or privilege.</li>
+            <li>The rights and remedies provided in this Agreement are cumulative and not exclusive of any rights and remedies provided by law.</li>
+        </ul>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 14</span>
+    </div>
+</div>
+
+<!-- PAGE 15: GENERAL 2 -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Services Agreement</div>
+    </div>
+
+    <div class="legal-content">
+        <h2 class="subsection-heading">(f) No Agency, partnership, joint venture or employment relationship</h2>
+        <ul class="legal-list">
+            <li>This Agreement shall not constitute or imply any partnership, joint venture, agency, fiduciary relationship, employment agreement or other relationship between the Parties other than the contractual relationship expressly provided for in this Agreement.</li>
+            <li>Neither Party shall have, nor represent that it has, any authority to make any commitments on the other Party's behalf.</li>
+        </ul>
+        
+        <h2 class="subsection-heading">(g) Further assurance</h2>
+        <p class="legal-text">Each Party to this Agreement shall at the request and expense of the other execute and do any deeds and other things reasonably necessary to carry out the provisions of this Agreement or to make it easier to enforce.</p>
+        
+        <h2 class="subsection-heading">(h) Severance</h2>
+        <p class="legal-text">If any provision of this Agreement is prohibited by law or judged by a court to be unlawful, void or unenforceable, the provision shall, to the extent required, be severed from this Agreement and rendered ineffective as far as possible without modifying the remaining provisions of this Agreement, and shall not in any way affect any other circumstances of or the validity or enforcement of this Agreement.</p>
+        
+        <h2 class="subsection-heading">(i) Notices</h2>
+        <p class="legal-text">A notice or other communication connected with this Agreement has no legal effect unless it is in writing. In addition to any method of service provided by law, the notice may be sent by pre-paid post to the address of the addressee as set out in this Agreement, or sent by email to the email address of the addressee. Correspondence sent by prepaid post will be deemed to have been received on the third business day after posting and if sent by email, on the date of transmission, or if that day is not a business day, then on the next business day.</p>
+        
+        <h2 class="subsection-heading">(j) Law and jurisdiction</h2>
+        <p class="legal-text">This Agreement takes effect, is governed by, and shall be construed in accordance with the laws from time to time in force in Victoria, Australia. The Parties submit to the non-exclusive jurisdiction of the courts of that state.</p>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 15</span>
+    </div>
+</div>
+
+<!-- PAGE 16: BLANK -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Services Agreement</div>
+    </div>
+
+    <div class="legal-content" style="display: flex; align-items: center; justify-content: center; height: 100%; min-height: 2500px;">
+        <p style="font-size: 36px; color: #cbd5e0; font-style: italic; text-align: center;">
+            [This page intentionally left blank]
+        </p>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 16</span>
+    </div>
+</div>
+
+<!-- PAGE 17: SIGNATURES -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Services Agreement</div>
+    </div>
+
+    <div class="legal-content">
+        <h1 class="section-heading">EXECUTED AS AN AGREEMENT</h1>
+        
+        <!-- SALESCOMMAND SIGNATURES -->
+        <div class="signature-section">
+            <h2 class="signature-party-title">SalesCommand</h2>
+            
+            <div class="company-info">
+                <strong>SIGNED by DC DIGITAL GROUP PTY LTD</strong> (Trading as SalesCommand)<br>
+                ABN 27 637 530 664<br>
+                in accordance with section 127(1) of the Corporations Act:
+            </div>
+            
+            <div class="signature-grid">
+                <!-- Required: Adam Lopez Delon (Director) -->
+                <div class="signature-field">
+                    <div class="signature-label">Director (Required)</div>
+                    <div class="signature-box">
+                        <div class="signature-input-group">
+                            <div style="flex: 1;"></div>
+                            <div class="signature-line"></div>
+                            <div class="signature-helper">Signature</div>
+                        </div>
+                        
+                        <div class="signature-input-group">
+                            <div style="flex: 1;"></div>
+                            <div class="signature-line"></div>
+                            <div class="signature-helper">Print Name</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Optional: Second SalesCommand Director/Secretary -->
+                <div class="signature-field">
+                    <div class="signature-label">Director / Secretary (Optional)</div>
+                    <div class="signature-box">
+                        <div class="signature-input-group">
+                            <div style="flex: 1;"></div>
+                            <div class="signature-line"></div>
+                            <div class="signature-helper">Signature</div>
+                        </div>
+                        
+                        <div class="signature-input-group">
+                            <div style="flex: 1;"></div>
+                            <div class="signature-line"></div>
+                            <div class="signature-helper">Print Name</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CLIENT SIGNATURES -->
+        <div class="signature-section">
+            <h2 class="signature-party-title">Client</h2>
+            
+            <div class="company-info">
+                <strong>SIGNED by Communication Skills Academy</strong><br>
+                (ACN: <span style="border-bottom: 1px solid #000; padding: 0 50px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>)<br>
+                in accordance with section 127(1) of the Corporations Act:
+            </div>
+            
+            <div class="signature-grid">
+                <!-- Required: Client Director -->
+                <div class="signature-field">
+                    <div class="signature-label">Director (Required)</div>
+                    <div class="signature-box">
+                        <div class="signature-input-group">
+                            <div style="flex: 1;"></div>
+                            <div class="signature-line"></div>
+                            <div class="signature-helper">Signature</div>
+                        </div>
+                        
+                        <div class="signature-input-group">
+                            <div style="flex: 1;"></div>
+                            <div class="signature-line"></div>
+                            <div class="signature-helper">Print Name</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Optional: Second Client Director/Secretary -->
+                <div class="signature-field">
+                    <div class="signature-label">Director / Secretary (Optional)</div>
+                    <div class="signature-box">
+                        <div class="signature-input-group">
+                            <div style="flex: 1;"></div>
+                            <div class="signature-line"></div>
+                            <div class="signature-helper">Signature</div>
+                        </div>
+                        
+                        <div class="signature-input-group">
+                            <div style="flex: 1;"></div>
+                            <div class="signature-line"></div>
+                            <div class="signature-helper">Print Name</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 17</span>
+    </div>
+</div>
+
+<!-- PAGE 18: SCHEDULE -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Services Agreement</div>
+    </div>
+
+    <div class="legal-content">
+        <h1 class="section-heading">SCHEDULE – SPECIFICATIONS</h1>
+        
+        <div class="schedule-section">
+            <!-- CLIENT INFORMATION -->
+            <div class="schedule-field">
+                <div class="schedule-label">Client Name:</div>
+                <div class="schedule-input-line" style="font-size: 30px; padding: 10px;">Communication Skills Academy</div>
+            </div>
+            
+            <div class="schedule-field">
+                <div class="schedule-label">ACN:</div>
+                <div class="schedule-input-line"></div>
+            </div>
+            
+            <div class="schedule-field">
+                <div class="schedule-label">Full Address:</div>
+                <div class="schedule-input-line"></div>
+            </div>
+            
+            <!-- SERVICES DESCRIPTION -->
+            <div class="schedule-field">
+                <div class="schedule-label">Services:</div>
+                <div class="schedule-input-box" style="padding: 20px; font-size: 28px;">
+                    See Appendix A for full scope of RevOps Engine Services.
+                </div>
+                <p style="font-size: 28px; color: #718096; margin-top: 15px; font-style: italic;">
+                    The scope of the Services shall be as exhaustively defined and set forth in this Schedule and Appendix A, which forms an integral part of this Agreement.
+                </p>
+            </div>
+            
+            <!-- TERM & FEES -->
+            <div class="schedule-grid">
+                <div class="schedule-field">
+                    <div class="schedule-label">Term (Months):</div>
+                    <div class="schedule-input-line" style="font-size: 30px; padding: 10px;">12 Months</div>
+                </div>
+                
+                <div class="schedule-field">
+                    <div class="schedule-label">Successive Term:</div>
+                    <div class="schedule-input-line" style="font-size: 30px; padding: 10px;">12 Months</div>
+                </div>
+            </div>
+            
+            <p class="legal-text" style="font-size: 30px; color: #4a5568; margin: 30px 0;">
+                Pursuant to Clause 3(b), the agreement will automatically continue for this duration after the expiration of the Term, unless 30 days written notice of termination is given by either Party prior to the expiration of the preceding Term.
+            </p>
+            
+            <!-- FEES SECTION -->
+            <h2 class="subsection-heading" style="margin-top: 60px;">Fees</h2>
+            
+            <div class="schedule-grid">
+                <div class="schedule-field">
+                    <div class="schedule-label">Setup Fee (Month 1):</div>
+                    <div class="schedule-input-line" style="font-size: 30px; padding: 10px;">$6,000 AUD (One-time) (ex. GST)</div>
+                </div>
+                
+                <div class="schedule-field">
+                    <div class="schedule-label">Monthly Retainer (Months 2-12):</div>
+                    <div class="schedule-input-line" style="font-size: 30px; padding: 10px;">$4,500 AUD / Month (ex. GST)</div>
+                </div>
+            </div>
+            
+            <!-- AGREED EXPENSES (STATIC - NOT A FIELD) -->
+            <div class="expenses-box">
+                <div class="expenses-title">Agreed Expenses</div>
+                <div class="expenses-text">
+                    <strong>Total Estimated Monthly Tooling:</strong> $692-1,153 USD (~$1,070-1,790 AUD) (ex. GST)
+                </div>
+                <div class="expenses-text" style="margin-top: 20px;">
+                    <strong>One-Time Setup Costs:</strong><br>
+                    • Domain purchases (10-15 domains × $12-15): $120-225 USD<br>
+                    • DNS configuration and setup: Included in SalesCommand setup fee<br>
+                    • Initial inbox configuration: Included in SalesCommand setup fee
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 18</span>
+    </div>
+</div>
+
+<!-- ============================================
+     PROPOSAL CONTENT (APPENDICES)
+     ============================================ -->
+
+<!-- PROPOSAL PAGE 1 -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Appendix A - Proposal</div>
+    </div>
+
+    <div class="legal-content">
+        <h1 class="section-heading">APPENDIX A - PROPOSAL REFERENCE</h1>
+        <h2 class="subsection-heading">Executive Summary</h2>
+        
+        <p class="legal-text"><strong>The Problem:</strong> You've built the leading communication training business in Australia with 18+ years of expertise, but you're trapped in a dangerous dependency on repeat clients and declining Google Ads ROI. With only 6-7 new leads per week and traffic conversions dropping, you need a predictable, scalable lead generation engine before revenue becomes a rollercoaster.</p>
+        
+        <p class="legal-text"><strong>Our Solution:</strong> SalesCommand's AI-powered RevOps engine transforms your lead generation from hope-based to predictable in 90 days. We'll build your complete sales intelligence system, generate qualified corporate training leads, and scale you to consistent monthly revenue—all while maintaining the authentic, high-quality messaging your brand is known for.</p>
+        
+        <h2 class="subsection-heading">Key Metrics (12-Month Projection)</h2>
+        <ul class="legal-list">
+            <li><strong>Total Investment:</strong> $55,500 AUD over 12 months (ex. GST)</li>
+            <li><strong>Expected New Revenue:</strong> $180,000 - $270,000 AUD</li>
+            <li><strong>Qualified Opportunities:</strong> 50-75 sales-ready leads</li>
+            <li><strong>New Clients:</strong> 12-18 corporate training accounts</li>
+            <li><strong>ROI:</strong> 324-486% return on investment</li>
+            <li><strong>Monthly Lead Flow:</strong> 15-25 qualified leads (by Month 3)</li>
+            <li><strong>Bonus Asset:</strong> 1,000+ dream customer database for precision ad targeting</li>
+        </ul>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 19</span>
+    </div>
+</div>
+
+<!-- PROPOSAL PAGE 2 -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Appendix A - Proposal</div>
+    </div>
+
+    <div class="legal-content">
+        <h1 class="section-heading">The Challenge You're Facing</h1>
+        
+        <h2 class="subsection-heading">Current State Analysis</h2>
+        <p class="legal-text">Your business is at an inflection point:</p>
+        
+        <h3 style="font-size: 36px; color: #003545; margin: 30px 0;">What's Working:</h3>
+        <ul class="legal-list">
+            <li>18+ years of proven training expertise</li>
+            <li>Flagship Business Writing Essentials course with strong results</li>
+            <li>Team of 10 skilled facilitators</li>
+            <li>Excellent content marketing assets (ebooks, webinars, cheat sheets)</li>
+            <li>Strong repeat client relationships</li>
+            <li>Premium pricing position ($7,500 per workshop)</li>
+        </ul>
+
+        <h3 style="font-size: 36px; color: #ea580c; margin: 30px 0;">What's Breaking:</h3>
+        <ul class="legal-list">
+            <li>Google Ads ROI declining sharply (broad targeting = wasted spend)</li>
+            <li>Only 6-7 new leads per week (insufficient for growth)</li>
+            <li>Heavy dependency on repeat business (risky revenue model)</li>
+            <li>Traffic and conversion drops despite quality offerings</li>
+            <li>No proactive outbound lead generation system</li>
+            <li>Reactive instead of predictable pipeline</li>
+            <li>No database of identified dream customers for precision targeting</li>
+        </ul>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 20</span>
+    </div>
+</div>
+
+<!-- PROPOSAL PAGE 3 -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Appendix A - Proposal</div>
+    </div>
+
+    <div class="legal-content">
+        <h1 class="section-heading">What We Build for You</h1>
+        <p class="legal-text">SalesCommand creates a complete Revenue Operations engine specifically designed for corporate training businesses:</p>
+
+        <h2 class="subsection-heading">1. AI Knowledge Base & Brand Intelligence</h2>
+        <ul class="legal-list">
+            <li>Deep analysis of your 18 years of training content, methodologies, and brand voice</li>
+            <li>Conversion of unstructured content into dynamic AI knowledge base</li>
+            <li>Authentic messaging that sounds like Vikki and your team, not generic AI</li>
+            <li>Integration of your sister agency's copywriting expertise</li>
+        </ul>
+
+        <h2 class="subsection-heading">2. Target Market Intelligence</h2>
+        <ul class="legal-list">
+            <li>Identification of ideal corporate training buyers (L&D managers, HR directors)</li>
+            <li>Industry-specific targeting (government, education, health, corporate)</li>
+            <li>Company size and training budget qualification</li>
+            <li>Decision-maker contact data enrichment</li>
+        </ul>
+
+        <h2 class="subsection-heading">3. Multi-Channel Outreach Infrastructure</h2>
+        <ul class="legal-list">
+            <li>Professional email infrastructure (domain setup, inbox warming)</li>
+            <li>LinkedIn integration for social selling</li>
+            <li>Personalised messaging sequences that respect your brand values</li>
+            <li>Compliance with CAN-SPAM and Australian communication standards</li>
+        </ul>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 21</span>
+    </div>
+</div>
+
+<!-- PROPOSAL PAGE 4 -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Appendix A - Proposal</div>
+    </div>
+
+    <div class="legal-content">
+        <h2 class="subsection-heading">4. Lead Scoring & Qualification Framework</h2>
+        <ul class="legal-list">
+            <li>Automated lead scoring based on fit + engagement</li>
+            <li>SQL (Sales Qualified Lead) / SAL (Sales Accepted Lead) framework</li>
+            <li>Weighted pipeline value tracking for guarantee measurement</li>
+            <li>Integration with your existing CRM</li>
+        </ul>
+
+        <h2 class="subsection-heading">5. Intelligent Follow-Up Automation</h2>
+        <ul class="legal-list">
+            <li>Multi-touch sequences that feel personal, not robotic</li>
+            <li>Behavioral triggers based on prospect engagement</li>
+            <li>Re-engagement of past workshop participants</li>
+            <li>Nurture sequences for longer sales cycles</li>
+        </ul>
+
+        <h1 class="section-heading">The Hidden Value Asset</h1>
+        <p class="legal-text">Here's what most agencies won't tell you: the database we build for you is incredibly valuable for paid advertising.</p>
+        
+        <p class="legal-text">We identify and score 1,000+ "dream customers" at scale. This database includes company details, decision-maker contacts, engagement history, and lead scores. We can submit this database directly to advertising platforms (LinkedIn Ads, Google Ads, Facebook/Instagram) for direct targeting.</p>
+        
+        <p class="legal-text"><strong>Why This Matters:</strong> Instead of spending ad budget on cold audiences hoping to find your ideal customer, you're advertising directly to companies we've already identified, researched, and scored as perfect fits for your training services. Your ad spend becomes surgical, not scattershot.</p>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 22</span>
+    </div>
+</div>
+
+<!-- PROPOSAL PAGE 5 -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Appendix A - Proposal</div>
+    </div>
+
+    <div class="legal-content">
+        <h1 class="section-heading">Agreement Structure</h1>
+
+        <h2 class="subsection-heading">Phase 1: Setup & Foundation (Month 1)</h2>
+        <p class="legal-text"><strong>Investment:</strong> $6,000 AUD one-time payment</p>
+        <ul class="legal-list">
+            <li>Complete AI knowledge base of your training programmes and brand voice</li>
+            <li>Target market research and ICP definition</li>
+            <li>Email infrastructure setup (10+ domains, 50+ inboxes, warming)</li>
+            <li>LinkedIn integration and profile optimisation</li>
+            <li>Messaging sequence development</li>
+            <li>Lead scoring framework and qualification criteria</li>
+            <li>CRM integration and dashboard setup</li>
+            <li><strong>Deliverable:</strong> Dream customer database (exportable for ad platforms)</li>
+        </ul>
+
+        <h2 class="subsection-heading">Phase 2: Launch & Optimisation (Months 2-3)</h2>
+        <p class="legal-text"><strong>Investment:</strong> $4,500 AUD per month</p>
+        <ul class="legal-list">
+            <li>Launch initial outreach campaigns</li>
+            <li>Email deliverability ramp-up (gradual volume increase)</li>
+            <li>A/B testing of messaging and offers</li>
+            <li>Weekly optimisation based on response data</li>
+            <li><strong>Expected Results:</strong> 15-20 qualified opportunities by Month 3</li>
+        </ul>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 23</span>
+    </div>
+</div>
+
+<!-- PROPOSAL PAGE 6 -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Appendix A - Proposal</div>
+    </div>
+
+    <div class="legal-content">
+        <h2 class="subsection-heading">Phase 3: Scale & Performance (Months 4-12)</h2>
+        <p class="legal-text"><strong>Investment:</strong> $4,500 AUD per month</p>
+        <ul class="legal-list">
+            <li>Consistent lead generation (15-25 qualified leads monthly)</li>
+            <li>Ongoing campaign optimisation and expansion</li>
+            <li>New sequence development based on performance</li>
+            <li>Quarterly strategy reviews and market intelligence updates</li>
+            <li>Re-engagement campaigns for past clients</li>
+        </ul>
+
+        <h1 class="section-heading">Performance Guarantee</h1>
+        <div style="background: #fff7ed; border: 4px solid #ea580c; border-radius: 15px; padding: 40px; margin: 40px 0;">
+            <h2 style="font-size: 40px; color: #ea580c; margin-bottom: 20px; font-weight: 800;">6-Month ROI Guarantee</h2>
+            <p class="legal-text">If we don't deliver ROI by Month 6 (measured by weighted pipeline value), we continue working at <strong>NO additional cost</strong> until the guaranteed value is achieved.</p>
+            <p class="legal-text"><strong>ROI Calculation:</strong></p>
+            <ul class="legal-list">
+                <li>Investment Period: 6 months (Setup + 5 months retainer) = $28,500 AUD (ex. GST)</li>
+                <li>Required Weighted Pipeline: Minimum $28,500 AUD value</li>
+            </ul>
+            <p class="legal-text">If total weighted pipeline value doesn't reach $28,500 AUD by Month 6, we work free until it does.</p>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 24</span>
+    </div>
+</div>
+
+<!-- PROPOSAL PAGE 7 -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Appendix A - Proposal</div>
+    </div>
+
+    <div class="legal-content">
+        <h1 class="section-heading">Financial Projections</h1>
+        
+        <table class="proposal-table">
+            <thead>
+                <tr>
+                    <th>Month</th>
+                    <th>Payment (ex. GST)</th>
+                    <th>Activity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>$6,000</td>
+                    <td>Setup & infrastructure build</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>$4,500</td>
+                    <td>Launch + initial leads</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>$4,500</td>
+                    <td>Optimisation + 15-20 qualified leads</td>
+                </tr>
+                <tr>
+                    <td>4-6</td>
+                    <td>$4,500/mo</td>
+                    <td>Scale to 15-25 leads/month</td>
+                </tr>
+                <tr>
+                    <td>7-12</td>
+                    <td>$4,500/mo</td>
+                    <td>Consistent pipeline generation</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="subsection-heading">Revenue Projections (Conservative Model)</h2>
+        <p class="legal-text">Assumptions: Average workshop value $7,500 AUD | 20 qualified leads/month | 27.5% Close Rate.</p>
+        
+        <table class="proposal-table">
+            <thead>
+                <tr>
+                    <th>Period</th>
+                    <th>Qualified Leads</th>
+                    <th>Revenue (AUD) (ex. GST)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Q1 (M1-M3)</td>
+                    <td>35</td>
+                    <td>$15,000 - 22,500</td>
+                </tr>
+                <tr>
+                    <td>Q2 (M4-M6)</td>
+                    <td>60</td>
+                    <td>$30,000 - 37,500</td>
+                </tr>
+                <tr>
+                    <td>Q3 (M7-M9)</td>
+                    <td>60</td>
+                    <td>$30,000 - 37,500</td>
+                </tr>
+                <tr>
+                    <td>Year 1 Total</td>
+                    <td>215</td>
+                    <td>$105,000 - 135,000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 25</span>
+    </div>
+</div>
+
+<!-- PROPOSAL PAGE 8 -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Appendix A - Proposal</div>
+    </div>
+
+    <div class="legal-content">
+        <h1 class="section-heading">Platform & Tooling</h1>
+        <p class="legal-text"><strong>IMPORTANT: You Own Your Infrastructure.</strong> All campaign tooling is built in your name, paid for by you, and fully owned by you. This ensures data portability and no vendor lock-in.</p>
+
+        <h2 class="subsection-heading">Estimated Monthly Tooling Costs (ex. GST)</h2>
+        <table class="proposal-table">
+            <thead>
+                <tr>
+                    <th>Tool</th>
+                    <th>Purpose</th>
+                    <th>Est. Monthly Cost (USD)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Clay / BitScale</td>
+                    <td>Data enrichment & automation</td>
+                    <td>$349-600</td>
+                </tr>
+                <tr>
+                    <td>Premium Email Inboxes</td>
+                    <td>50+ Microsoft/Outlook inboxes</td>
+                    <td>$120-250</td>
+                </tr>
+                <tr>
+                    <td>Email Bison</td>
+                    <td>Inbox warming</td>
+                    <td>$99</td>
+                </tr>
+                <tr>
+                    <td>HeyReach</td>
+                    <td>LinkedIn automation</td>
+                    <td>$79</td>
+                </tr>
+                <tr>
+                    <td>Domains</td>
+                    <td>10-15 Sending Domains</td>
+                    <td>$15-25</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="legal-text"><strong>Total Estimated Monthly Tooling:</strong> $692-1,153 USD (~$1,070-1,790 AUD) (ex. GST)</p>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 26</span>
+    </div>
+</div>
+
+<!-- PROPOSAL PAGE 9 -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Appendix A - Proposal</div>
+    </div>
+
+    <div class="legal-content">
+        <h1 class="section-heading">Implementation Timeline</h1>
+        
+        <h2 class="subsection-heading">Week 1: Discovery & Foundation</h2>
+        <ul class="legal-list">
+            <li>Kickoff meeting with full team</li>
+            <li>AI knowledge base build (training content, brand voice)</li>
+            <li>ICP workshop (define ideal corporate clients)</li>
+            <li>Domain procurement and Tool account creation</li>
+        </ul>
+
+        <h2 class="subsection-heading">Week 2: Infrastructure Build</h2>
+        <ul class="legal-list">
+            <li>DNS configuration (SPF, DKIM, DMARC)</li>
+            <li>Microsoft/Outlook inbox setup (50+ inboxes)</li>
+            <li>Email Bison warming protocol activation</li>
+            <li>Messaging sequence development</li>
+        </ul>
+
+        <h2 class="subsection-heading">Week 3: Testing & Optimisation</h2>
+        <ul class="legal-list">
+            <li>Messaging review and approval</li>
+            <li>Test campaigns with small sample</li>
+            <li>Deliverability monitoring and adjustment</li>
+        </ul>
+
+        <h2 class="subsection-heading">Week 4: Soft Launch (December)</h2>
+        <ul class="legal-list">
+            <li>Begin scaled outreach campaigns</li>
+            <li>Inbox warming continues</li>
+            <li>First qualified conversations expected</li>
+        </ul>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 27</span>
+    </div>
+</div>
+
+<!-- PROPOSAL PAGE 10 -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Appendix A - Proposal</div>
+    </div>
+
+    <div class="legal-content">
+        <h1 class="section-heading">Success Metrics & Reporting</h1>
+        
+        <h2 class="subsection-heading">What We Track</h2>
+        <ul class="legal-list">
+            <li><strong>Volume Metrics:</strong> Emails sent, Open rates (Target 35-45%), Reply rates (Target 3-8%)</li>
+            <li><strong>Quality Metrics:</strong> Lead score distribution, SQL/SAL qualification rates</li>
+            <li><strong>Pipeline Metrics:</strong> Weighted pipeline value, Stage progression rates</li>
+            <li><strong>ROI Metrics:</strong> Cost per qualified lead, Revenue generated</li>
+        </ul>
+
+        <h2 class="subsection-heading">Risk Mitigation</h2>
+        <p class="legal-text"><strong>Scenario 1: Low Response Rates.</strong> Mitigation: A/B testing, messaging refinement, target market adjustment. Timeline: 2-4 weeks.</p>
+        <p class="legal-text"><strong>Scenario 2: Quality Issues.</strong> Mitigation: Lead scoring adjustment, tighter qualification criteria. Timeline: 1-2 weeks.</p>
+        <p class="legal-text"><strong>Scenario 3: Deliverability Issues.</strong> Mitigation: Inbox warming protocols, sender reputation management.</p>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 28</span>
+    </div>
+</div>
+
+<!-- PROPOSAL PAGE 11: ROI Analysis -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Appendix A - Proposal</div>
+    </div>
+
+    <div class="legal-content">
+        <h1 class="section-heading">ROI Analysis</h1>
+        
+        <h2 class="subsection-heading">Conservative Scenario</h2>
+        <ul class="legal-list">
+            <li><strong>Investment:</strong> $55,500 AUD (~$85,000 AUD) (ex. GST)</li>
+            <li><strong>Year 1 Revenue:</strong> $105,000 AUD</li>
+            <li><strong>Net ROI:</strong> 24%</li>
+            <li><strong>Break-Even:</strong> Month 7-8</li>
+        </ul>
+        
+        <h2 class="subsection-heading">Expected Scenario</h2>
+        <ul class="legal-list">
+            <li><strong>Investment:</strong> $55,500 AUD (~$85,000 AUD) (ex. GST)</li>
+            <li><strong>Year 1 Revenue:</strong> $180,000 AUD</li>
+            <li><strong>Net ROI:</strong> 112%</li>
+            <li><strong>Break-Even:</strong> Month 5-6</li>
+        </ul>
+        
+        <h2 class="subsection-heading">Optimistic Scenario</h2>
+        <ul class="legal-list">
+            <li><strong>Investment:</strong> $55,500 AUD (~$85,000 AUD) (ex. GST)</li>
+            <li><strong>Year 1 Revenue:</strong> $270,000 AUD</li>
+            <li><strong>Net ROI:</strong> 218%</li>
+            <li><strong>Break-Even:</strong> Month 4-5</li>
+        </ul>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 29</span>
+    </div>
+</div>
+
+<!-- PROPOSAL PAGE 12: Why This Works -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Appendix A - Proposal</div>
+    </div>
+
+    <div class="legal-content">
+        <h1 class="section-heading">Why This Works for Training Businesses</h1>
+        
+        <h2 class="subsection-heading">The Fundamental Challenge</h2>
+        <p class="legal-text">Corporate training has a unique lead generation problem:</p>
+        <ul class="legal-list">
+            <li>Long sales cycles (60-180 days)</li>
+            <li>Multiple decision-makers (L&D, HR, Budget holders)</li>
+            <li>Budget seasonality (Q1, Q4 planning cycles)</li>
+            <li>Need for relationship-building before purchase</li>
+            <li>Price sensitivity despite training value</li>
+        </ul>
+
+        <h2 class="subsection-heading">Why Our Approach Works</h2>
+        <ul class="legal-list">
+            <li><strong>Brand-Aligned Messaging:</strong> We build from YOUR content, YOUR voice, YOUR methodology. Messages sound like they came from Vikki and your team, not a generic agency.</li>
+            <li><strong>Intelligent Targeting:</strong> We identify companies with training budget indicators, team sizes requiring facilitated workshops, and industry-specific communication challenges.</li>
+            <li><strong>Multi-Touch Relationship Building:</strong> Not one cold email—a coordinated campaign including content sharing and social proof.</li>
+        </ul>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 30</span>
+    </div>
+</div>
+
+<!-- PROPOSAL PAGE 13: Database Advantage -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Appendix A - Proposal</div>
+    </div>
+
+    <div class="legal-content">
+        <h1 class="section-heading">The Database Advantage: Direct Ad Targeting</h1>
+        <p class="legal-text">Here's the value multiplier most agencies don't deliver: As we source and score your dream customers, we're building an incredibly valuable advertising asset—a database of 1,000+ ideal-fit companies with enriched contact data and engagement history.</p>
+
+        <h2 class="subsection-heading">This Creates Two Powerful Opportunities:</h2>
+        <ul class="legal-list">
+            <li><strong>Direct Targeting:</strong> Upload your dream customer database to ad platforms for direct targeting. No waiting for website visits—target them proactively.</li>
+            <li><strong>Retargeting for Engaged Prospects:</strong> Prospects who opened emails, clicked links, or engaged on LinkedIn. Coordinated messaging across email, LinkedIn, and paid ads.</li>
+        </ul>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 31</span>
+    </div>
+</div>
+
+<!-- PROPOSAL PAGE 14: Differentiation & Team -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Appendix A - Proposal</div>
+    </div>
+
+    <div class="legal-content">
+        <h1 class="section-heading">What Makes SalesCommand Different</h1>
+        <ul class="legal-list">
+            <li>We don't use generic templates—we build custom AI knowledge bases from YOUR content.</li>
+            <li>Focus on qualified leads, not just replies.</li>
+            <li>Deep dive into the training business model.</li>
+            <li>Protects your brand with authentic messaging.</li>
+        </ul>
+
+        <h1 class="section-heading">Our Team</h1>
+        <ul class="legal-list">
+            <li><strong>Adam Lopez Delon - Founder & CEO:</strong> Former DocuSign, HubSpot. Specialises in AI-powered sales intelligence.</li>
+            <li><strong>Ken Thomas - Revenue Operations:</strong> Expertise in scalable sales systems and CRM integration. Focus on qualifying frameworks and pipeline management.</li>
+            <li><strong>Evelyn Lopez Delon - AI & Knowledge Engineering:</strong> Specialises in converting content into AI knowledge bases. Ensures brand voice authenticity.</li>
+        </ul>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 32</span>
+    </div>
+</div>
+
+<!-- PROPOSAL PAGE 15: Deliverability Strategy -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Appendix A - Proposal</div>
+    </div>
+
+    <div class="legal-content">
+        <h1 class="section-heading">Corporate Email Deliverability Strategy</h1>
+        <p class="legal-text">Since you're targeting corporate decision-makers, we use a specific Microsoft/Outlook strategy:</p>
+        
+        <ul class="legal-list">
+            <li><strong>Domains:</strong> 10-15 dedicated sending domains to distribute reputation and protect your primary domain.</li>
+            <li><strong>Inboxes:</strong> 50+ Microsoft/Outlook mailboxes for lower daily send volume per inbox (mimics human patterns).</li>
+            <li><strong>Volume:</strong> Maximum 25 emails/inbox/day.</li>
+            <li><strong>Warming:</strong> 2-week rigorous warming protocol before launch.</li>
+        </ul>
+        
+        <h2 class="subsection-heading">Result</h2>
+        <p class="legal-text">95%+ inbox placement rate to corporate Microsoft/Outlook systems.</p>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 33</span>
+    </div>
+</div>
+
+<!-- PROPOSAL PAGE 16: Responsibilities -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Appendix A - Proposal</div>
+    </div>
+
+    <div class="legal-content">
+        <h1 class="section-heading">Responsibilities</h1>
+        
+        <h2 class="subsection-heading">What SalesCommand Provides</h2>
+        <ul class="legal-list">
+            <li>Tool selection and account setup</li>
+            <li>All platform configuration and integration</li>
+            <li>Ongoing tool management and optimisation</li>
+            <li>Technical support and system monitoring</li>
+            <li>Campaign analytics and reporting dashboards</li>
+        </ul>
+
+        <h2 class="subsection-heading">What You Provide</h2>
+        <ul class="legal-list">
+            <li>Company card for tool subscriptions OR approval for invoice pass-through</li>
+            <li>Access to training content, course materials, case studies</li>
+            <li>CRM access (HubSpot, Salesforce, or we can set up for you)</li>
+            <li>Decision-maker availability for onboarding calls</li>
+            <li>Timely responses to qualified lead handoffs</li>
+        </ul>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 34</span>
+    </div>
+</div>
+
+<!-- PROPOSAL PAGE 17: Addressing Concerns -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Appendix A - Proposal</div>
+    </div>
+
+    <div class="legal-content">
+        <h1 class="section-heading">Addressing Specific Concerns</h1>
+        
+        <h2 class="subsection-heading">"Will this damage our brand?"</h2>
+        <p class="legal-text">Short answer: No. We ensure quality by building messages from YOUR content and requiring your approval before launch. We focus on value-first outreach, not spam blasts.</p>
+
+        <h2 class="subsection-heading">"How long before we see results?"</h2>
+        <p class="legal-text">Realistic timeline: Month 1 is infrastructure. Month 2 sees first qualified conversations. By Month 3, lead flow is optimized (15-20/month). Consistent pipeline is achieved in Months 4-6.</p>
+
+        <h2 class="subsection-heading">"What if our market is too small?"</h2>
+        <p class="legal-text">Your TAM is 10,000+ companies. We only need to reach 2-3% for significant growth. We prioritize quality over quantity, targeting ideal fit companies like government agencies and large corporates.</p>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 35</span>
+    </div>
+</div>
+
+<!-- PROPOSAL PAGE 18: Investment Options -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Appendix A - Proposal</div>
+    </div>
+
+    <div class="legal-content">
+        <h1 class="section-heading">Your Investment Options</h1>
+        <p class="legal-text"><strong>Standard 12-Month Engagement:</strong> Total Investment $55,500 AUD (ex. GST). Includes complete RevOps engine build, 6-month ROI guarantee, and monthly optimization.</p>
+        
+        <h2 class="subsection-heading">Optional Add-Ons</h2>
+        <ul class="legal-list">
+            <li><strong>Paid Advertising Integration:</strong> $1,500-3,000/month. Direct targeting of dream customer database on LinkedIn/Google.</li>
+            <li><strong>Partnership Development:</strong> $2,000/month. Outreach to complementary training providers for JV opportunities.</li>
+        </ul>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 36</span>
+    </div>
+</div>
+
+<!-- PROPOSAL PAGE 19: Lead Scoring -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Appendix A - Proposal</div>
+    </div>
+
+    <div class="legal-content">
+        <h1 class="section-heading" style="margin-top: 50px;">Appendix: Sample Lead Scoring Framework</h1>
+        <ul class="legal-list">
+            <li><strong>Fit Score (0-50 points):</strong> Industry match, company size, training budget indicators.</li>
+            <li><strong>Engagement Score (0-50 points):</strong> Email opens, link clicks, reply to outreach, LinkedIn profile views.</li>
+            <li><strong>Lead Categories:</strong>
+                <ul class="legal-sublist">
+                    <li>Cold (0-30): Keep nurturing</li>
+                    <li>Warm (31-60): Priority follow-up</li>
+                    <li>Hot (61-80): Immediate sales outreach</li>
+                    <li>Sales Ready (81-100): Direct to calendar booking</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 37</span>
+    </div>
+</div>
+
+<!-- PROPOSAL PAGE 20: Messaging Sequence -->
+<div class="page">
+    <div class="page-header">
+        <img src="https://i.imgur.com/dJsYIS5.png" alt="SalesCommand" class="page-header-logo">
+        <div class="page-header-text">Appendix A - Proposal</div>
+    </div>
+
+    <div class="legal-content">
+        <h1 class="section-heading">Appendix: Sample Messaging Sequence</h1>
+        
+        <h2 class="subsection-heading">Email 1 - Value First (Day 1)</h2>
+        <p class="legal-text"><strong>Subject:</strong> Quick question about Business Writing at [Company]</p>
+        <p class="legal-text">Hi [First Name], I noticed [Company] recently [specific trigger]. With teams scaling, communication consistency becomes critical. We've worked with [similar industry] organizations to help teams write clearer emails... Would a 15-minute conversation be valuable?</p>
+
+        <h2 class="subsection-heading">Email 2 - Social Proof (Day 4)</h2>
+        <p class="legal-text">Hi [First Name], Following up... [Similar company] was struggling with inconsistent client communication. After our workshop: 87% improvement in clarity scores. Would this interest your team?</p>
+
+        <h2 class="subsection-heading">Email 3 - Content Offer (Day 8)</h2>
+        <p class="legal-text">Hi [First Name], Even if training isn't on your radar, thought this might be useful: [Link to ebook]. Covers the 5 most common mistakes we see in [industry]. No strings attached.</p>
+
+        <h2 class="subsection-heading">Email 4 - Breakup (Day 12)</h2>
+        <p class="legal-text">Hi [First Name], I don't want to clutter your inbox. If communication training isn't a priority, let me know and I'll close your file. Best, Vikki.</p>
+    </div>
+
+    <div class="page-footer">
+        <span>SalesCommand Pty Ltd | ABN 27 637 530 664</span>
+        <span>Page 38</span>
+    </div>
+</div>
+
+</body>
+</html>
